@@ -1,23 +1,28 @@
 package es.etg.daw.dawes.java.rest.restfull.productos.application.usecase;
 
 import java.time.LocalDateTime;
+
 import es.etg.daw.dawes.java.rest.restfull.productos.application.command.EditProductoCommand;
+import es.etg.daw.dawes.java.rest.restfull.productos.domain.error.ProductoNotFoundException;
 import es.etg.daw.dawes.java.rest.restfull.productos.domain.model.Producto;
+import es.etg.daw.dawes.java.rest.restfull.productos.domain.repository.ProductoRepository;
+import lombok.AllArgsConstructor;
 
+@AllArgsConstructor
 public class EditProductoUseCase {
-    public Producto update(EditProductoCommand comando) {
 
-        // Se puede usar comando.id() y no getId() por usar @Accessors(fluent = true)
-        // en la clase CreateProductoCommand
-        Producto producto = Producto.builder()
-                .id(comando.id())
-                .nombre(comando.nombre())
-                .precio(comando.precio())
-                .createdAt(LocalDateTime.now()).build();
+    private final ProductoRepository productoRepository;
 
-        // TODO Faltaría la lógica sobre el producto, por ejemplo, almacenarlo en una
-        // base de datos.
-        return producto;
+    public Producto update(EditProductoCommand command) {
+
+        return productoRepository.getById(command.id())
+                .map(p -> { // Actualizamos los atributos del objeto
+                    p.setNombre(command.nombre());
+                    p.setPrecio(command.precio());
+                    return productoRepository.save(p);
+                })
+                .orElseThrow(() -> new ProductoNotFoundException(command.id()));
 
     }
+
 }
