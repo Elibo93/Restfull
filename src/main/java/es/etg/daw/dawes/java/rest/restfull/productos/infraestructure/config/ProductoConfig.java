@@ -13,7 +13,6 @@ import es.etg.daw.dawes.java.rest.restfull.productos.application.usecase.EditPro
 import es.etg.daw.dawes.java.rest.restfull.productos.application.usecase.FindProductoUseCase;
 import es.etg.daw.dawes.java.rest.restfull.productos.domain.repository.ProductoRepository;
 import es.etg.daw.dawes.java.rest.restfull.productos.infraestructure.db.repository.mock.ProductoRepositoryMockImpl;
-import es.etg.daw.dawes.java.rest.restfull.productos.infraestructure.web.rest.ProductoController;
 import lombok.RequiredArgsConstructor;
 
 @Configuration
@@ -25,7 +24,7 @@ public class ProductoConfig {
     // POST
     @Bean
     public CreateProductoUseCase createProductoUseCase() {
-        return new CreateProductoUseCase(new ProductoRepositoryMockImpl());
+        return new CreateProductoUseCase(productoRepository);
     }
 
     @Bean
@@ -45,20 +44,21 @@ public class ProductoConfig {
     }
 
     // DELETE
+
     @Bean
     public DeleteProductoUseCase deleteProductoUseCase() {
-        return new DeleteProductoUseCase();
+        return new DeleteProductoUseCase(productoRepository);
     }
 
     @Bean
     public DeleteProductoService deleteProductoService() {
-        return new DeleteProductoService();
+        return new DeleteProductoService(deleteProductoUseCase());
     }
 
     // PUT
     @Bean
     public EditProductoUseCase editProductoUseCase() {
-        return new EditProductoUseCase(new ProductoRepositoryMockImpl());
+        return new EditProductoUseCase(productoRepository);
     }
 
     @Bean

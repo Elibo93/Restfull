@@ -6,7 +6,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class DeleteProductoService {
 
-    private DeleteProductoUseCase deleteProductoUseCase;
+    private final DeleteProductoUseCase deleteProductoUseCase;
 
     public void delete(int id) {
         deleteProductoUseCase.delete(id);

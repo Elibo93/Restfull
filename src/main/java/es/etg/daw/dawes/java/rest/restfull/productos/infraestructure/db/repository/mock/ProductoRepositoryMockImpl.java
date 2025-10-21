@@ -32,7 +32,7 @@ public class ProductoRepositoryMockImpl implements ProductoRepository {
     }
 
     @Override
-    public void deteteById(Integer id) {
+    public void deleteById(Integer id) {
         productos.remove(id);
     }
 
