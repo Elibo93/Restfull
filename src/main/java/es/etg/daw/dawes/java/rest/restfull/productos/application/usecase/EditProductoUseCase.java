@@ -1,7 +1,5 @@
 package es.etg.daw.dawes.java.rest.restfull.productos.application.usecase;
 
-import java.time.LocalDateTime;
-
 import es.etg.daw.dawes.java.rest.restfull.productos.application.command.EditProductoCommand;
 import es.etg.daw.dawes.java.rest.restfull.productos.domain.error.ProductoNotFoundException;
 import es.etg.daw.dawes.java.rest.restfull.productos.domain.model.Producto;
