@@ -4,12 +4,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import es.etg.daw.dawes.java.rest.restfull.productos.application.command.CreateProductoCommand;
-import es.etg.daw.dawes.java.rest.restfull.productos.application.command.EditProductoCommand;
-import es.etg.daw.dawes.java.rest.restfull.productos.application.service.CreateProductoService;
-import es.etg.daw.dawes.java.rest.restfull.productos.application.service.DeleteProductoService;
-import es.etg.daw.dawes.java.rest.restfull.productos.application.service.EditProductoService;
-import es.etg.daw.dawes.java.rest.restfull.productos.application.service.FindProductoService;
+import es.etg.daw.dawes.java.rest.restfull.common.domain.model.ProductoId;
+import es.etg.daw.dawes.java.rest.restfull.productos.application.command.producto.CreateProductoCommand;
+import es.etg.daw.dawes.java.rest.restfull.productos.application.command.producto.EditProductoCommand;
+import es.etg.daw.dawes.java.rest.restfull.productos.application.service.producto.CreateProductoService;
+import es.etg.daw.dawes.java.rest.restfull.productos.application.service.producto.DeleteProductoService;
+import es.etg.daw.dawes.java.rest.restfull.productos.application.service.producto.EditProductoService;
+import es.etg.daw.dawes.java.rest.restfull.productos.application.service.producto.FindProductoService;
 import es.etg.daw.dawes.java.rest.restfull.productos.domain.model.Producto;
 import es.etg.daw.dawes.java.rest.restfull.productos.infraestructure.mapper.ProductoMapper;
 import es.etg.daw.dawes.java.rest.restfull.productos.infraestructure.web.dto.ProductoRequest;
@@ -65,7 +66,7 @@ public class ProductoController {
 
     @DeleteMapping("/{id}") // Método Delete
     public ResponseEntity<?> deleteProducto(@PathVariable int id) {
-        deleteProductoService.delete(id);
+        deleteProductoService.delete(new ProductoId(id));
         return ResponseEntity.noContent().build(); // Devpñvemos una respuesta vacía.
     }
 
