@@ -67,7 +67,9 @@ public class ProductoController {
     @DeleteMapping("/{id}") // Método Delete
     public ResponseEntity<?> deleteProducto(@PathVariable int id) {
         deleteProductoService.delete(new ProductoId(id));
-        return ResponseEntity.noContent().build(); // Devpñvemos una respuesta vacía.
+        return ResponseEntity.noContent().build(); // Devpñvemos una respuesta vacía.new
+                                                   // CreateProductoCommand(productoRequest.nombre(),
+                                                   // productoRequest.precio())
     }
 
     @PutMapping("/{id}") // Método Put
