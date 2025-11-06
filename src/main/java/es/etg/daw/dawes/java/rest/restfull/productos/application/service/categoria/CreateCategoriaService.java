@@ -12,7 +12,7 @@ import lombok.RequiredArgsConstructor;
 public class CreateCategoriaService {
     private final CreateCategoriaUseCase createCategoriaUseCase;
 
-	public Categoria createProducto(CreateCategoriaCommand comando) {
+	public Categoria createCategoria(CreateCategoriaCommand comando) {
 		Categoria categoria = createCategoriaUseCase.create(comando);
 		return categoria;
 	}

@@ -1,7 +1,6 @@
 package es.etg.daw.dawes.java.rest.restfull.productos.domain.error;
 
 import es.etg.daw.dawes.java.rest.restfull.common.domain.error.EntityNotFoundException;
-import es.etg.daw.dawes.java.rest.restfull.common.domain.model.ProductoId;
 
 public class ProductoNotFoundException extends EntityNotFoundException {
 
