@@ -45,7 +45,7 @@ import es.etg.daw.dawes.java.rest.restfull.productos.infraestructure.web.dto.Cat
 @DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
 public class CategoriaControllerTest {
     // Constante para las rutas
-    public static String ENDPOINT = "/Categorias";
+    public static String ENDPOINT = "/categorias";
 
     // Json
     private ObjectMapper mapper = new ObjectMapper();

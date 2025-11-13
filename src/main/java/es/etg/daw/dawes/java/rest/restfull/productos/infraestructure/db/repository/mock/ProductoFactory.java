@@ -30,7 +30,7 @@ public class ProductoFactory {
         }
     
         public static Producto create() {
-                return new Producto(new ProductoId(9), "Producto de prueba", 9.99, LocalDateTime.now(), new CategoriaId(1));
+                return new Producto(new ProductoId(9), "ProductoPrueba", 9.99, LocalDateTime.now(), new CategoriaId(1));
         }
 
     
