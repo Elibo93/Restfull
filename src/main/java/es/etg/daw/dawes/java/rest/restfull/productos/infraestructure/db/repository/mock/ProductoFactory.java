@@ -4,9 +4,9 @@ import java.time.LocalDateTime;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import es.etg.daw.dawes.java.rest.restfull.common.domain.model.CategoriaId;
-import es.etg.daw.dawes.java.rest.restfull.common.domain.model.ProductoId;
+import es.etg.daw.dawes.java.rest.restfull.productos.domain.model.CategoriaId;
 import es.etg.daw.dawes.java.rest.restfull.productos.domain.model.Producto;
+import es.etg.daw.dawes.java.rest.restfull.productos.domain.model.ProductoId;
 
 public class ProductoFactory {
 

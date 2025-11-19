@@ -1,7 +1,7 @@
 package es.etg.daw.dawes.java.rest.restfull.productos.application.command.producto;
 
-import es.etg.daw.dawes.java.rest.restfull.common.domain.model.CategoriaId;
-import es.etg.daw.dawes.java.rest.restfull.common.domain.model.ProductoId;
+import es.etg.daw.dawes.java.rest.restfull.productos.domain.model.CategoriaId;
+import es.etg.daw.dawes.java.rest.restfull.productos.domain.model.ProductoId;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.experimental.Accessors;

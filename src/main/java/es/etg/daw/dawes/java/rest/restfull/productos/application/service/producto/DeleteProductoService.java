@@ -1,7 +1,7 @@
 package es.etg.daw.dawes.java.rest.restfull.productos.application.service.producto;
 
-import es.etg.daw.dawes.java.rest.restfull.common.domain.model.ProductoId;
 import es.etg.daw.dawes.java.rest.restfull.productos.application.usecase.producto.DeleteProductoUseCase;
+import es.etg.daw.dawes.java.rest.restfull.productos.domain.model.ProductoId;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor

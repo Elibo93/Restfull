@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import es.etg.daw.dawes.java.rest.restfull.common.domain.model.CategoriaId;
 import es.etg.daw.dawes.java.rest.restfull.productos.application.command.categoria.CreateCategoriaCommand;
 import es.etg.daw.dawes.java.rest.restfull.productos.application.command.categoria.EditCategoriaCommand;
 import es.etg.daw.dawes.java.rest.restfull.productos.application.service.categoria.CreateCategoriaService;
@@ -27,6 +26,7 @@ import es.etg.daw.dawes.java.rest.restfull.productos.application.service.categor
 import es.etg.daw.dawes.java.rest.restfull.productos.application.service.categoria.EditCategoriaService;
 import es.etg.daw.dawes.java.rest.restfull.productos.application.service.categoria.FindCategoriaService;
 import es.etg.daw.dawes.java.rest.restfull.productos.domain.model.Categoria;
+import es.etg.daw.dawes.java.rest.restfull.productos.domain.model.CategoriaId;
 import es.etg.daw.dawes.java.rest.restfull.productos.infraestructure.mapper.CategoriaMapper;
 import es.etg.daw.dawes.java.rest.restfull.productos.infraestructure.web.dto.CategoriaRequest;
 import es.etg.daw.dawes.java.rest.restfull.productos.infraestructure.web.dto.CategoriaResponse;

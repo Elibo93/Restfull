@@ -28,8 +28,8 @@ import org.springframework.test.web.servlet.MockMvc;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
-import es.etg.daw.dawes.java.rest.restfull.common.domain.model.CategoriaId;
 import es.etg.daw.dawes.java.rest.restfull.productos.domain.model.Categoria;
+import es.etg.daw.dawes.java.rest.restfull.productos.domain.model.CategoriaId;
 import es.etg.daw.dawes.java.rest.restfull.productos.infraestructure.db.repository.mock.CategoriaFactory;
 import es.etg.daw.dawes.java.rest.restfull.productos.infraestructure.web.dto.CategoriaRequest;
 import es.etg.daw.dawes.java.rest.restfull.productos.infraestructure.web.dto.CategoriaResponse;

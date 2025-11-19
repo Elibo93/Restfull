@@ -4,8 +4,8 @@ import java.time.LocalDateTime;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import es.etg.daw.dawes.java.rest.restfull.common.domain.model.CategoriaId;
 import es.etg.daw.dawes.java.rest.restfull.productos.domain.model.Categoria;
+import es.etg.daw.dawes.java.rest.restfull.productos.domain.model.CategoriaId;
 
 public class CategoriaFactory {
     public static final Map<CategoriaId, Categoria> getDemoData() {
