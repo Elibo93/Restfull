@@ -27,8 +27,6 @@ public class CategoriaConfig {
         return new CategoriaJpaRepositoryImpl(categoriaRepository);
     }
 
-    
-
     @Bean
     public CreateCategoriaUseCase createCategoriaUseCase() {
         return new CreateCategoriaUseCase(categoriaRepository());

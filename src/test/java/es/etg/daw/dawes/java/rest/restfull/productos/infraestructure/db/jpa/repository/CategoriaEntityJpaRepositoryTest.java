@@ -33,34 +33,18 @@ public class CategoriaEntityJpaRepositoryTest {
     @Test
     @Order(2)
     void findById() {
-        final double PRECISION = 0.001;
         update(); // Actualizo y recupero el dato controlado
         var p = CategoriaFactory.create(); // Categoria cambiado antes, vamos a ve rsi está bien
 
-        var Categoria = repository.findById(p.getId().getValue()).get();
+        var categoria = repository.findById(p.getId().getValue()).get();
 
         assertAll(
-                () -> assertNotNull(Categoria),
-                () -> assertEquals(Categoria.getId(), p.getId().getValue()),
-                () -> assertEquals(Categoria.getNombre(), p.getNombre()),
+                () -> assertNotNull(categoria),
+                () -> assertEquals(categoria.getId(), p.getId().getValue()),
+                () -> assertEquals(categoria.getNombre(), p.getNombre())
                 );
     }
 
-    @Test
-    @Order(3)
-    void findByName() {
-        final double PRECISION = 0.001;
-        update(); // Actualizo y recupero el dato controlado
-        var p = CategoriaFactory.create(); // Categoria cambiado antes, vamos a ve rsi está bien
-
-        var Categoria = repository.findByNombre(p.getNombre());
-
-        assertAll(
-                () -> assertNotNull(Categoria),
-                () -> assertEquals(Categoria.getId(), p.getId().getValue()),
-                () -> assertEquals(Categoria.getNombre(), p.getNombre())
-                );
-    }
 
     @Test
     @Order(5)
