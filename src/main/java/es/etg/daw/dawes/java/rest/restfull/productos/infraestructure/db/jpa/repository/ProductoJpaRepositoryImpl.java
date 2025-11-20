@@ -48,8 +48,11 @@ public class ProductoJpaRepositoryImpl implements ProductoRepository {
 
     @Override
     public Optional<Producto> getByName(String name) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getByName'");
+        ProductoEntity prod = repository.findByNombre(name);
+        if (prod != null)
+            return Optional.of(ProductoMapper.toDomain(prod));
+        else
+            return Optional.empty();
     }
     // Hereda automáticamente métodos como: save(), findById(), findAll(), delete(),
     // etc.
