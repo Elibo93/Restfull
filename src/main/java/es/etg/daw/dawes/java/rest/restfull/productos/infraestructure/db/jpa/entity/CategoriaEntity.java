@@ -1,5 +1,6 @@
 package es.etg.daw.dawes.java.rest.restfull.productos.infraestructure.db.jpa.entity;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,7 +47,7 @@ public class CategoriaEntity {
         this.nombre = nombre;
     }
 
-    // Métodos auxiliares para sincronizra productos y categorias
+    //Métodos auxiliares para sincronizar productos y categorias
     public void addProducto(ProductoEntity producto) {
         this.productos.add(producto);
         producto.setCategoria(this); // Sincroniza el lado Producto
