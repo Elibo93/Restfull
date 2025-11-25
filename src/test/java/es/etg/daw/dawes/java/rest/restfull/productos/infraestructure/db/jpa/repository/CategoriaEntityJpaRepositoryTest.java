@@ -23,11 +23,11 @@ public class CategoriaEntityJpaRepositoryTest {
     @Order(1)
     void findAll() {
 
-        var Categorias = repository.findAll();
+        var categorias = repository.findAll();
 
         assertAll(
-                () -> assertNotNull(Categorias),
-                () -> assertTrue(!Categorias.isEmpty()));
+                () -> assertNotNull(categorias),
+                () -> assertTrue(!categorias.isEmpty()));
     }
 
     @Test
@@ -51,33 +51,33 @@ public class CategoriaEntityJpaRepositoryTest {
     void create() {
         var nuevo = CategoriaMapper.toEntity(CategoriaFactory.create());
         nuevo.setId(null);
-        var Categoria = repository.save(nuevo);
+        var categoria = repository.save(nuevo);
 
         assertAll(
-                () -> assertNotNull(Categoria),
-                () -> assertTrue(Categoria.getId() != null));
+                () -> assertNotNull(categoria),
+                () -> assertTrue(categoria.getId() != null));
     }
 
     @Test
     @Order(10)
     void update() {
         var nuevo = CategoriaMapper.toEntity(CategoriaFactory.create());
-        var Categoria = repository.save(nuevo);
+        var categoria = repository.save(nuevo);
 
         assertAll(
-                () -> assertNotNull(Categoria),
-                () -> assertTrue(Categoria.getId() != null));
+                () -> assertNotNull(categoria),
+                () -> assertTrue(categoria.getId() != null));
     }
 
     @Test
     @Order(15)
     void delete() {
-        var Categoria = repository.findById(1);
-        repository.delete(Categoria.get());
+        var categoria = repository.findById(1);
+        repository.delete(categoria.get());
 
-        var CategoriaEliminado = repository.findById(1).isEmpty();
+        var categoriaEliminado = repository.findById(1).isEmpty();
         assertAll(
-                () -> assertTrue(CategoriaEliminado));
+                () -> assertTrue(categoriaEliminado));
     }
 
 }
